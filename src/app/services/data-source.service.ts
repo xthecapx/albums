@@ -33,6 +33,6 @@ export class DataSource {
     }
 
     getPhotos(id) {
-        return this.albums.filter((albums) => albums.albumId === id);
+        return this.albums.filter((albums) => albums.albumId === Number(id));
     }
 }

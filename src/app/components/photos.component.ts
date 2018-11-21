@@ -5,7 +5,13 @@ import { DataSource } from '../services/data-source.service';
 @Component({
   selector: 'app-photos',
   template: `
-    <div *ngFor="let photo of photos">{{ photo.id }}</div>
+    <div *ngFor="let photo of photos; let i = index;">
+      <ul *ngIf="i < 3">
+        <li>{{photo.id}}</li>
+        <li>{{photo.title}}</li>
+        <li><img [src]="photo.url"/></li>
+       </ul>
+    </div>
   `
 })
 export class PhotosComponent implements OnInit {
